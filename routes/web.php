@@ -20,8 +20,8 @@ Route::get('/', [MainController::class, 'showHome'])->name('show.home');
 Route::get('/throughTheLens', [MainController::class, 'showTTL'])->name('show.ttl');
 
 
-Route::post('/store_image/insert_image', [MainController::class, 'insert_image'])->name('add.photos');
+Route::get('/store_images', [MainController::class, 'storeImagesPage'])->name('imagesPage');
+Route::post('/store_images/insert_image', [MainController::class, 'insert_image'])->name('add.photos');
 
 Route::get('/store_image/fetch_image/{id}', [MainController::class, 'fetch_image']);
 
-Route::get('/store_images', [MainController::class, 'storeImagesPage']);

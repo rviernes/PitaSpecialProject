@@ -33,24 +33,22 @@ Licence URI: http://www.os-templates.com/template-terms
     </div>
     <br class="clear" />
   </div>
-</div>
+</div>where('id', \DB::raw("(select max('id') from images)"));
 <div class="wrapper">
   <div id="latest">
-
    <div class="container" style="border: 1px solid #DDDDDD; position: relative;">
 	<div class="tag" style="float: right; position: absolute; left: 0px; top: 0px;  padding: 5px; color: #FFFFFF;
        font-weight: bold; margin-top: 25%;"> This is the featured message in this section which is an information </div>
     <div class="fl_left"><a href="#">
-      @foreach($data as $row)
-      <img src="store_image/fetch_image/{{ $row->id }}" alt="" style="width:  575px; height:  300px; object-fit: cover;" /></a></div> <!-- //Variable -->
-      @endforeach
+
+      <img src="{{ asset('uploads/pictures/'.$images->user_image) }}" alt="" style="width:  575px; height:  300px; object-fit: cover;" /></a></div> <!-- //Variable -->
 
 	</div>
     <div class="fl_right">
       <h2>Cursus penati saccum ut.</h2>
       <p>Cursuspenatisaccum ut curabitur nulla tellus tor ames a in curabitur pede. Idet mollisi eros dis orci congue elis et curabitur consequam intesque. Cursuspenatisaccum ut curabitur nulla tellus tor.</p>
       <ul>
-        <li><a href="#"><img src="images/demo/100x100.gif" alt="" /></a></li>
+        <li><a href="#"><img src="{{ asset('uploads/pictures/'.$images2->user_image) }}" style="width:  100px; height:  100px; object-fit: cover;" alt="" /></a></li>
         <li><a href="#"><img src="images/demo/100x100.gif" alt="" /></a></li>
         <li class="last"><a href="#"><img src="images/demo/100x100.gif" alt="" /></a></li>
       </ul>
