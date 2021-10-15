@@ -26,11 +26,20 @@ class MainController extends Controller
     }
 
     function showHome() {
-        $images = Images::select('user_image')->where('id',1)->first();
-        $images2 = Images::select('user_image')->where('id',2)->first();
+        $image = Images::select('user_image')->where('id',1)->first();
+        $image2 = Images::select('user_image')->where('id',2)->first();
+        $image3 = Images::select('user_image')->where('id',3)->first();
+        $image4 = Images::select('user_image')->where('id',4)->first();
+        $image5 = Images::select('user_image')->where('id',5)->first();
+        $image6 = Images::select('user_image')->where('id',6)->first();
+        $image7 = Images::select('user_image')->where('id',7)->first();
+        $image8 = Images::select('user_image')->where('id',8)->first();
+        $image9 = Images::select('user_image')->where('id',9)->first();
+        $image10 = Images::select('user_image')->where('id',10)->first();
+        $image11 = Images::select('user_image')->where('id',11)->first();
         
         // dd($images); die();
-        return view('User.homepage', compact('images','images2'));
+        return view('User.homepage', compact('image','image2'));
     }
 
     function storeImagesPage() {

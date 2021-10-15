@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class AdminMiddleware
+class UserMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,9 +16,10 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->usertype == "admin"){
+        if(auth()->user()->usertype == "user"){
             return $next($request);
-        }elseif (auth()->user()->usertype == "user") {
+        }
+        elseif(auth()->user()->usertype == "admin"){
             return back();
         }
     }

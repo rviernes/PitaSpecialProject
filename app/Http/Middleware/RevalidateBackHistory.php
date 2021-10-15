@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class AdminMiddleware
+class RevalidateBackHistory
 {
     /**
      * Handle an incoming request.
@@ -16,10 +16,6 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->usertype == "admin"){
-            return $next($request);
-        }elseif (auth()->user()->usertype == "user") {
-            return back();
-        }
+        return $next($request);
     }
 }
